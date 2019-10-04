@@ -1,12 +1,12 @@
 # zhang_lengersdorff_mikus_glaescher_lamm_rl_fitfalls_suggestions
 
-Code for Zhang Lengersdorff2, Mikus, Gläscher, & Claus Lamm (in prep) Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience
+Code for Zhang, Lengersdorff, Mikus, Gläscher, & Lamm (in prep). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience.
 
 Note: contents are under construction. Will be updated soon.
 
 This repository contains
 ```
-├─ code                 # Matlab & R code to run the analyses
+├─ code                 # Matlab & R code to run the analyses and produce figures
 ├─ data                 # behavioral & fMRI data
 ```
 
