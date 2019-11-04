@@ -1,6 +1,4 @@
-# zhang_lengersdorff_mikus_glaescher_lamm_rl_fitfalls_suggestions
-
-Code for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2019, biorxiv). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)
+## Code and data for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2019, biorxiv). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)
 
 This repository contains
 ```
@@ -23,11 +21,10 @@ This repository contains
 
 ## posterior predictive check
 * Figure 3A-C: [plot_ppc.m](code/plot_ppc.m)
-* 
+* model fitting: --> calls the stan model []
 
 
-
-
+For bug reports, please contact Lei Zhang (lei.zhang@univie.ac.at).
 
 Thanks to this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
