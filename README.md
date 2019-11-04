@@ -1,4 +1,6 @@
-## Code and data for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2019, biorxiv). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)
+**Code and data for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2019, biorxiv). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)**
+
+___
 
 This repository contains
 ```
