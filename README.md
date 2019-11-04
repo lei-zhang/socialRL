@@ -27,7 +27,7 @@ This repository contains:
 * model fitting: [reinforcement_learning_HBA.R](code/reinforcement_learning_HBA.R) --> calls the stan model [RL_ppc.stan](code/RL_ppc.stan)
 
 
-For bug reports, please contact Lei Zhang (lei.zhang@univie.ac.at).
+For bug reports, please contact Lei Zhang ([lei.zhang@univie.ac.at](mailto:lei.zhang@univie.ac.at)).
 
 Thanks to this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
