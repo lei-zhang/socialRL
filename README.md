@@ -16,7 +16,7 @@ root
 * Figure 1A: [rl_learning_curve.m](code/rl_learning_curve.m)
 * Figure 1B: [rl_outcome_weight.m](code/rl_outcome_weight.m)
 * Figure 1C: [plot_softmax.m](code/plot_softmax.m)
-* Figure 1D: [RL_simulations.Rmd](code/rl_simulations.Rmd)
+* Figure 1D: [rl_simulations.Rmd](code/rl_simulations.Rmd)
 
 ## fMRI time series of the prediction error
 * Figure 2C: [pe_time_series_plot.m](code/pe_time_series_plot.m)
@@ -25,7 +25,7 @@ root
 
 ## posterior predictive check
 * Figure 3A-C: [plot_ppc.m](code/plot_ppc.m)
-* model fitting: [reinforcement_learning_HBA.R](code/reinforcement_learning_HBA.R) --> calls the stan model [RL_ppc.stan](code/rl_ppc.stan)
+* model fitting: [reinforcement_learning_HBA.R](code/reinforcement_learning_HBA.R) --> calls the stan model [rl_ppc.stan](code/rl_ppc.stan)
 
 
 For bug reports, please contact Lei Zhang ([lei.zhang@univie.ac.at](mailto:lei.zhang@univie.ac.at)).
