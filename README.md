@@ -6,8 +6,7 @@ This repository contains
 ├─ data                 # behavioral & fMRI data
 ```
 
-**Note 1**: to reproduced the Matlab figures, you may need the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function.
-
+**Note 1**: to reproduced the Matlab figures, you may need the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function. <br />
 **Note 2**: to properly run all scripts, you may want to set the root of this repository as your work directory. 
 
 ## RL parameter simulations
