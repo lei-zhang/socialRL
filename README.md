@@ -2,8 +2,6 @@
 
 Code for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2019, biorxiv). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)
 
-Note: contents are under construction. Will be updated soon.
-
 This repository contains
 ```
 ├─ code                 # Matlab & R code to run the analyses and produce figures
@@ -13,7 +11,7 @@ This repository contains
 **Note**: to reproduced the Matlab figures, you may need the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function.
 
 
-* Figure 1A: rl_learning_curve.m
+* Figure 1A: [rl_learning_curve.m](code/rl_learning_curve.m)
 * Figure 1B: rl_outcome_weight.m
 * Figure 1C: plot_softmax.
 * Figure 1D: RL_simulations.Rmd
