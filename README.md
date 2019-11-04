@@ -7,7 +7,8 @@ This repository contains
 ```
 
 **Note 1**: to reproduced the Matlab figures, you may need the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function.
-__Note 2__: to properly run all scripts, you may want to set the root of this repository as your work directory. 
+
+**Note 2**: to properly run all scripts, you may want to set the root of this repository as your work directory. 
 
 ## RL parameter simulations
 * Figure 1A: [rl_learning_curve.m](code/rl_learning_curve.m)
@@ -22,7 +23,7 @@ __Note 2__: to properly run all scripts, you may want to set the root of this re
 
 ## posterior predictive check
 * Figure 3A-C: [plot_ppc.m](code/plot_ppc.m)
-* model fitting: []() --> calls the stan model []
+* model fitting: [reinforcement_learning_HBA.R](code/reinforcement_learning_HBA.R) --> calls the stan model [RL_ppc.stan](code/RL_ppc.stan)
 
 
 For bug reports, please contact Lei Zhang (lei.zhang@univie.ac.at).
