@@ -33,5 +33,5 @@ Thanks to this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wik
 
 ### LICENSE
 
-This license gives you the option to re-use and adapt, as long as you note any changes you made, and provide a link to the original.
+This license gives you the option to re-use and adapt, as long as you note any changes you made, and provide a link to the original. <br />
 ![](https://upload.wikimedia.org/wikipedia/commons/9/99/Cc-by-nc_icon.svg )
