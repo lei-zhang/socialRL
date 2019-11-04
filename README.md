@@ -10,10 +10,18 @@ This repository contains
 ├─ data                 # behavioral & fMRI data
 ```
 
-**Note**: to reproduced the Matlab figures, you may need the [color brewer toolbox](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) and the [offsetAxes function](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m)  
+**Note**: to reproduced the Matlab figures, you may need the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function.
+
+
+* Figure 1A: rl_learning_curve.m
+* Figure 1B: rl_outcome_weight.m
+* Figure 1C: plot_softmax.
+* Figure 1D: RL_simulations.Rmd
 
 
 
+
+Thanks to this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ### LICENSE
 
