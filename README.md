@@ -33,4 +33,4 @@ Thanks to this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wik
 
 ### LICENSE
 
-![alt text](https://upload.wikimedia.org/wikipedia/commons/9/99/Cc-by-nc_icon.svg "Logo Title Text 1")
+![](https://upload.wikimedia.org/wikipedia/commons/9/99/Cc-by-nc_icon.svg )
