@@ -1,6 +1,6 @@
 # zhang_lengersdorff_mikus_glaescher_lamm_rl_fitfalls_suggestions
 
-Code for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (in prep). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^ Equal contributions)
+Code for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2019, biorxiv). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)
 
 Note: contents are under construction. Will be updated soon.
 
@@ -9,6 +9,9 @@ This repository contains
 ├─ code                 # Matlab & R code to run the analyses and produce figures
 ├─ data                 # behavioral & fMRI data
 ```
+
+**Note**: to reproduced the Matlab figures, you may need the [color brewer toolbox] (https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) and the [offsetAxes function] (https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m)  
+
 
 
 
