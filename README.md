@@ -1,4 +1,4 @@
-**Code and data for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (in prep.). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)**
+**Code and data for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (submitted). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)**
 
 ___
 
