@@ -8,7 +8,8 @@ library(tidyverse)
 ```
 
 ```{r}
-results = readRDS("sim-results/sim_results_all.rds") %>% bind_rows %>% mutate_at(., c("p","trials"), factor) %>% mutate(., pcorrs = pcorrs*100)
+root_path = ''  # change your root_path accordingly
+results = readRDS(file.path(root_path, 'data/sim_results/sim_results_all.rds')) %>% bind_rows %>% mutate_at(., c("p","trials"), factor) %>% mutate(., pcorrs = pcorrs*100)
 ```
 
 ```{r}
