@@ -13,7 +13,7 @@ root
 **Note 2**: to reproduce the Matlab figures, you may need the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function. 
 
 ## RL parameter simulations
-* Figure 1A: [rl_learning_curve.m](code/rl_learning_curve.m)
+* Figure 1A: [rl_learning_curve.m](code/rl_learning_curve.m) --> calls [simuRL_one_person.m](code/simuRL_one_person.m)
 * Figure 1B: [rl_outcome_weight.m](code/rl_outcome_weight.m)
 * Figure 1C: [plot_softmax.m](code/plot_softmax.m)
 * Figure 1D: [rl_simulations.Rmd](code/rl_simulations.Rmd)
