@@ -1,6 +1,6 @@
 ####################################################################
 # load data
-load('_data/rl_mp.RData')
+load('data/PPC/rl_mp.RData')
 sz <- dim(rl_mp)
 nSubjects <- sz[1]
 nTrials   <- sz[2]
@@ -11,7 +11,7 @@ dataList <- list(nSubjects=nSubjects,
                  reward=rl_mp[,,2])
 
 # load model object
-f = readRDS('_outputs/fit_hrch_optm_ppc.RData')
+f = readRDS('data/PPC/rl_fit.RData')
 
 ####################################################################
 # overall mean
@@ -51,7 +51,7 @@ model_pred_subj[,3] = y_pred_sub_mean_HDI[2,]
 
 model_pred_overall = rowMeans(y_pred_mean_mcmc)
 
-R.matlab::writeMat('E:/projects/00_ongoing/RLSCAN/data/PPC/PPC_RL.mat', data=data, 
+R.matlab::writeMat('data/PPC/PPC_RL.mat', data=data, 
          model_pred_overall=model_pred_overall, 
          model_pred_trial=model_pred_trial,
          model_pred_subj=model_pred_subj)
