@@ -1,4 +1,6 @@
-**Code and data for Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2019, PsyArXiv). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)** [DOI: 10.31234/osf.io/uthw2](10.31234/osf.io/uthw2).
+**Code and data for： <br />
+Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2019, PsyArXiv). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)** <br />
+[DOI: 10.31234/osf.io/uthw2](https://doi.org/10.31234/osf.io/uthw2).
 
 ___
 
