@@ -1,4 +1,3 @@
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat)]() 
 
 **Code and data for： <br />
 Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2020). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)** *Social cognitive and affective neuroscience* <br />
