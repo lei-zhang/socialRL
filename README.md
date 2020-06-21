@@ -1,3 +1,4 @@
+[![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?style=social)](https://twitter.com/lei_zhang_lz)
 
 **Code and data for： <br />
 Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2020). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)** *Social cognitive and affective neuroscience* <br />
