@@ -1,3 +1,5 @@
+[![GitHub repo size](https://img.shields.io/github/repo-size/lei-zhang/socialRL?color=brightgreen&logo=github)](https://github.com/lei-zhang/socialRL)
+[![GitHub language count](https://img.shields.io/github/languages/count/lei-zhang/socialRL?color=brightgreen&logo=github)](https://github.com/lei-zhang/socialRL)
 [![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=informational&logo=github&style=plastic)](https://github.com/lei-zhang/socialRL)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?color=%231DA1F2&logo=twitter&logoColor=%231DA1F2&style=plastic)](https://twitter.com/lei_zhang_lz)
 
