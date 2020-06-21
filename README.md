@@ -1,3 +1,4 @@
+[![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=blue&logo=github)](https://github.com/lei-zhang/socialRL)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?style=social)](https://twitter.com/lei_zhang_lz)
 
 **Code and data for： <br />
