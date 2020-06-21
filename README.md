@@ -1,4 +1,4 @@
-[![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=blue&logo=github)](https://github.com/lei-zhang/socialRL)
+[![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=informational&logo=github&style=plastic)](https://github.com/lei-zhang/socialRL)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?color=%231DA1F2&logo=twitter&logoColor=%231DA1F2&style=plastic)](https://twitter.com/lei_zhang_lz)
 
 
