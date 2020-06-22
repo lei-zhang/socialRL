@@ -3,7 +3,7 @@
 [![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=informational&logo=github)](https://github.com/lei-zhang/socialRL)
 [![DOI](https://img.shields.io/badge/DOI-10.1093%2Fscan%2Fnsaa089-informational)](http://dx.doi.org/10.1093/scan/nsaa089)<br />
 [![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?label=%40lei_zhang_lz)](https://twitter.com/lei_zhang_lz)
-
+[![Lab Twitter Follow](https://img.shields.io/twitter/follow/ScanUnit?label=%40ScanUnit)](https://twitter.com/ScanUnit)
 
 
 **Code and data for： <br />
