@@ -1,8 +1,8 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/lei-zhang/socialRL?color=brightgreen&logo=github)](https://github.com/lei-zhang/socialRL)
 [![GitHub language count](https://img.shields.io/github/languages/count/lei-zhang/socialRL?color=brightgreen&logo=github)](https://github.com/lei-zhang/socialRL)
-[![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=informational&logo=github&style=plastic)](https://github.com/lei-zhang/socialRL)
-[![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?color=%231DA1F2&label=%40lei_zhang_lz&logo=twitter&logoColor=%231DA1F2&style=plastic)](https://twitter.com/lei_zhang_lz)
+[![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=informational&logo=github)](https://github.com/lei-zhang/socialRL)
 [![DOI](https://img.shields.io/badge/DOI-10.1093%2Fscan%2Fnsaa089-informational)](http://dx.doi.org/10.1093/scan/nsaa089)
+[![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?label=%40lei_zhang_lz&style=social)](https://twitter.com/lei_zhang_lz)
 
 
 
