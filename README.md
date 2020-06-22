@@ -2,7 +2,7 @@
 [![GitHub language count](https://img.shields.io/github/languages/count/lei-zhang/socialRL?color=brightgreen&logo=github)](https://github.com/lei-zhang/socialRL)
 [![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=informational&logo=github)](https://github.com/lei-zhang/socialRL)
 [![DOI](https://img.shields.io/badge/DOI-10.1093%2Fscan%2Fnsaa089-informational)](http://dx.doi.org/10.1093/scan/nsaa089)
-[![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?label=%40lei_zhang_lz&style=social)](https://twitter.com/lei_zhang_lz)
+[![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?label=%40lei_zhang_lz)](https://twitter.com/lei_zhang_lz)
 
 
 
