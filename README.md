@@ -1,7 +1,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/lei-zhang/socialRL?color=brightgreen&logo=github)](https://github.com/lei-zhang/socialRL)
 [![GitHub language count](https://img.shields.io/github/languages/count/lei-zhang/socialRL?color=brightgreen&logo=github)](https://github.com/lei-zhang/socialRL)
-[![GitHub All Releases](https://img.shields.io/github/downloads/lei-zhang/socialRL/total?color=informational&logo=github)](https://github.com/lei-zhang/socialRL)
-[![DOI](https://img.shields.io/badge/DOI-10.1093%2Fscan%2Fnsaa089-informational)](http://dx.doi.org/10.1093/scan/nsaa089)<br />
+[![DOI](https://img.shields.io/badge/DOI-10.1093%2Fscan%2Fnsaa089-informational)](http://dx.doi.org/10.1093/scan/nsaa089)
+[![GitHub last commit](https://img.shields.io/github/last-commit/lei-zhang/socialRL?color=orange&logo=github)](https://github.com/lei-zhang/socialRL)<br />
 [![Twitter Follow](https://img.shields.io/twitter/follow/lei_zhang_lz?label=%40lei_zhang_lz)](https://twitter.com/lei_zhang_lz)
 [![Lab Twitter Follow](https://img.shields.io/twitter/follow/ScanUnit?label=%40ScanUnit)](https://twitter.com/ScanUnit)
 
@@ -10,6 +10,7 @@
 Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2020). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)** *Social cognitive and affective neuroscience* <br />
 [DOI: 10.1093/scan/nsaa089](https://doi.org/10.1093/scan/nsaa089).
 
+To reproduce all analyses and figures in the manuscript. 
 ___
 
 This repository contains:
