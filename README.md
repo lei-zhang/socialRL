@@ -10,9 +10,7 @@
 Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2020). Frameworks, pitfalls, and suggestions of using reinforcement learning models in social neuroscience. (^Equal contributions)** *Social cognitive and affective neuroscience* <br />
 [DOI: 10.1093/scan/nsaa089](https://doi.org/10.1093/scan/nsaa089).
 
-To reproduce all analyses and figures in the manuscript. 
-
-A 2-min flash talk of the paper is available on [YouTube](https://youtu.be/JQMfpf1-mGE). 
+A **2-min flash talk** of the paper is available on [YouTube](https://youtu.be/JQMfpf1-mGE). 
 ___
 
 This repository contains:
@@ -21,6 +19,8 @@ root
   ├─ code       # Matlab & R code to run the analyses and produce figures
   ├─ data       # behavioral & fMRI data
 ```
+
+to reproduce all analyses and figures in the manuscript. 
 
 **Note 1**: to properly run all scripts, you may need to set the root of this repository as your work directory. <br />
 **Note 2**: to reproduce the Matlab figures, you may need the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function. 
