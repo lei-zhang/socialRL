@@ -11,6 +11,8 @@ Zhang^, Lengersdorff^, Mikus, Gläscher, & Lamm (2020). Frameworks, pitfalls, an
 [DOI: 10.1093/scan/nsaa089](https://doi.org/10.1093/scan/nsaa089).
 
 To reproduce all analyses and figures in the manuscript. 
+
+A 2-min flash talk of the paper is available on [YouTube](https://youtu.be/JQMfpf1-mGE). 
 ___
 
 This repository contains:
@@ -27,7 +29,7 @@ root
 * Figure 1A: [rl_learning_curve.m](code/rl_learning_curve.m) --> calls [simuRL_one_person.m](code/simuRL_one_person.m)
 * Figure 1B: [rl_outcome_weight.m](code/rl_outcome_weight.m)
 * Figure 1C: [plot_softmax.m](code/plot_softmax.m)
-* Figure 1D: [rl_simulations.Rmd](code/rl_simulations.Rmd)
+* Figure 1D: [rl_simulations.Rmd](code/rl_simulations.Rmd) --> full simulation [rl-simulations-generate-data.Rmd](code/rl-simulations-generate-data.Rmd)
 
 ## fMRI time series of the prediction error
 * Figure 2C: [pe_time_series_plot.m](code/pe_time_series_plot.m)
@@ -38,6 +40,8 @@ root
 * Figure 3A-C: [plot_ppc.m](code/plot_ppc.m)
 * model fitting: [reinforcement_learning_HBA.R](code/reinforcement_learning_HBA.R) --> calls the stan model [rl_ppc.stan](code/rl_ppc.stan)
 
+
+___
 
 For bug reports, please contact Lei Zhang ([lei.zhang@univie.ac.at](mailto:lei.zhang@univie.ac.at)).
 
