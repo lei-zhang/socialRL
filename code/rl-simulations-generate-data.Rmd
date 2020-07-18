@@ -1,0 +1,337 @@
+---
+title: "RL Modeling simulations"
+output: html_notebook
+---
+
+\    
+Load libraries
+
+```{r}
+library(tidyverse)
+library(magrittr)
+library(furrr)
+```
+
+
+\   
+For parallel computing:
+```{r}
+cores = 8
+plan(multiprocess, workers = cores)
+
+```
+
+
+\   
+Custom functions
+```{r}
+## Gaussian filter ##
+gaussfilt.ll = function(x,sigma = 1, windowfact = 3) {
+  
+  kern = dnorm(seq(floor(-windowfact*sigma),ceiling(windowfact*sigma), by = 1), sd = sigma)
+  hl = (length(kern)-1)/2
+  x2 = c( rep(x[1],hl), x, rep(x[length(x)],hl))
+          
+  y = numeric(length(x))
+  
+  for (i in 1:length(x)) {
+    x_cut = x2[i:(i + 2*hl)]
+    y[i] = x_cut %*% kern;
+  }
+  return(y)
+}
+```
+
+
+### Reinforcement Learning without reversal   
+
+Virtual player:
+```{r}
+
+rl.player.fixed = function(theta, p = 0.75, trials = 20, blocks = 100) {
+  
+    logi = function(x,b) 1/(1+exp(-b*x))
+    update = function(vec,a,c,o) vec + a*matrix(c(  (1-c)*(o-vec[1])   ,  (c)*(o-vec[2])  ))
+  
+    a = theta[1];
+    b = theta[2];
+    
+    choices = matrix(numeric(trials*blocks), nrow = blocks, ncol = trials)
+    
+    for (j in 1:blocks) {
+      
+      v = matrix(c(0.5, 0.5))
+      
+      for (i in 1:trials) {
+        
+        choice = rbinom(1,1,logi(v[2]-v[1],b))
+        outcome = rbinom(1,1, p^choice*(1-p)^(1-choice))
+        v = update(v,a,choice,outcome)
+        choices[j,i] = choice
+        
+      }
+    }
+    
+    return(list(m = mean(choices), choices = choices))
+    
+}
+
+```
+
+\    
+Define simulation parameters:
+```{r}
+
+############################
+
+alpha_range = c(0,1)
+alpha_steps = 60
+
+beta_range = c(0,20)
+beta_steps = 60
+
+p = 0.75
+trials = 16
+
+############################
+
+blocks = 100
+
+```
+
+\    
+Run simulation
+
+```{r}
+data = crossing(alpha = seq(alpha_range[1],alpha_range[2], length.out = alpha_steps+1), beta = seq(beta_range[1],beta_range[2], length.out = beta_steps+1), )
+
+results = data %>% array_tree(.,1) %>% future_map_dbl(., ~ rl.player.fixed(c(.x[1], .x[2]), p = p, trials = trials, blocks = blocks)$m)
+data$pcorr = results
+
+```
+
+Gaussian smoothing for plot:
+
+```{r}
+
+sigma = 2
+
+data$pcorrs = matrix(results,beta_steps+1,alpha_steps+1) %>% array_tree(.,1) %>%
+              purrr::map(.,~gaussfilt.ll(.x,sigma)) %>% do.call(rbind,.) %>% array_tree(.,2) %>% 
+              purrr::map(.,~gaussfilt.ll(.x,sigma)) %>% do.call(cbind,.) %>% c(.)
+
+```
+
+\    
+Visualize
+```{r}
+
+(ggplot(data = data, mapping = aes(x = alpha, y = beta, fill = pcorrs)) + geom_raster(interpolate = TRUE) 
+     + stat_contour(aes(z = pcorrs), color = "black", alpha = 0.5, breaks = seq(0.69,0.8,by = 0.01)) 
+    + scale_x_continuous(expand = c(0,0)) + scale_y_continuous(expand = c(0,0)) 
+    + scale_fill_gradient(low = "blue", high = "yellow", limits = c(0.69,0.8), breaks = seq(0.5,1,0.1)) 
+    + xlab(bquote("Learning Rate"~alpha)) + ylab(bquote("Inverse Temperature" ~beta)) 
+    + labs(title = "Fixed reward probability", subtitle = paste0("Number of Trials: ", trials, " | Reward probability after correct choice: ",          p), fill = "correct \nchoices \n(%)") 
+    + geom_point(aes(x = 0.38, y = 4), shape = 1) + geom_point(aes(x = 0.325,y= 5), shape = 1)
+    + geom_text(aes(x = 0.385, y = 4), label = "Self", size = 4)
+    + geom_text(aes(x = 0.332, y = 5), label = "Other", size = 4)
+    + theme(aspect.ratio = 0.75))
+
+```
+
+
+### Simulations for 3 x 3 plot
+
+Define simulation parameters:
+```{r}
+
+## Fixed
+
+alpha_range = c(0,1)
+alpha_steps = 60
+
+beta_range = c(0,20)
+beta_steps = 60
+
+blocks = 5000
+
+## variable
+
+p = c(0.66, 0.75, 0.80)
+trials = c(10,20,30)
+pars = crossing(p,trials) %>% array_tree(.,1)
+
+data.base = crossing(alpha = seq(alpha_range[1],alpha_range[2], length.out = alpha_steps+1), beta = seq(beta_range[1],beta_range[2], length.out = beta_steps+1), )
+
+simfun = function(simpars) {
+      p = simpars[1]; trials = simpars[2];
+      data.base$p = p; data.base$trials = trials;
+      results = data.base %>% array_tree(.,1) %>% future_map_dbl(., ~ rl.player.fixed(c(.x[1], .x[2]), p = p, trials = trials, blocks = blocks)$m)
+      data.base$pcorr = results
+      
+      sigma = 2
+
+      data.base$pcorrs = matrix(results,beta_steps+1,alpha_steps+1) %>% array_tree(.,1) %>%
+              purrr::map(.,~gaussfilt.ll(.x,sigma)) %>% do.call(rbind,.) %>% array_tree(.,2) %>% 
+              purrr::map(.,~gaussfilt.ll(.x,sigma)) %>% do.call(cbind,.) %>% c(.)
+      
+      saveRDS(data.base,file = paste0("sim-results/sim_results_trials",trials,"_prob",p*100,".rds"))
+      return(data.base)
+      
+}
+
+RESULTS = purrr::map(pars, ~ simfun(.x))
+
+```
+
+### Reversal Learning
+
+\   Virtual player
+```{r}
+
+rl.player.reversal = function(theta, p = 0.75, trials = 100, reverse_after = 20, blocks = 100) {
+  
+    logi = function(x,b) 1/(1+exp(-b*x))
+    update = function(vec,a,c,o) vec + a*matrix(c(  (1-c)*(o-vec[1])   ,  (c)*(o-vec[2])  ))
+  
+    a = theta[1];
+    b = theta[2];
+    
+    choices = matrix(numeric(trials*blocks), nrow = blocks, ncol = trials)
+    good_choices = matrix(numeric(trials*blocks), nrow = blocks, ncol = trials)
+    
+    for (j in 1:blocks) {
+      
+      v = matrix(c(0.5, 0.5))
+      pc = p;
+      good = 1;
+      
+      for (i in 1:trials) {
+        
+        choice = rbinom(1,1,logi(v[2]-v[1],b))
+        outcome = rbinom(1,1, pc^choice*(1-pc)^(1-choice))
+        v = update(v,a,choice,outcome)
+        choices[j,i] = choice
+        good_choices[j,i] = as.numeric(choice == good)
+        if (i %% reverse_after == 0) {pc = 1 - pc; good = 1 - good}
+        
+      }
+    }
+    
+    return(list(choices = choices, good_choices = good_choices, m = mean(choices), goodm = mean(good_choices)))
+    
+}
+
+```
+
+
+\    
+Define simulation parameters:
+```{r}
+
+############################
+
+alpha_range = c(0,1)
+alpha_steps = 60
+
+beta_range = c(0,20)
+beta_steps = 60
+
+p = 0.75
+trials = 100
+reverse_after = 10
+
+############################
+
+blocks = 100
+
+in_parallel = TRUE
+cores = 20
+```
+
+\    
+Run simulation
+
+```{r}
+data2 = crossing(alpha = seq(alpha_range[1],alpha_range[2], length.out = alpha_steps+1), beta = seq(beta_range[1],beta_range[2], length.out = beta_steps+1), )
+
+results = data2 %>% array_tree(.,1) %>% future_map_dbl(., ~ rl.player.reversal(c(.x[1], .x[2]), p = p, trials = trials, reverse_after = reverse_after, blocks = blocks)$goodm)
+data2$pcorr = results
+
+```
+
+Gaussian smoothing for plot:
+
+```{r}
+
+sigma = 2
+
+data2$pcorrs = matrix(results,beta_steps+1,alpha_steps+1) %>% array_tree(.,1) %>%
+              purrr::map(.,~gaussfilt.ll(.x,sigma)) %>% do.call(rbind,.) %>% array_tree(.,2) %>% 
+              purrr::map(.,~gaussfilt.ll(.x,sigma)) %>% do.call(cbind,.) %>% c(.)
+
+```
+
+\    
+Visualize
+```{r}
+
+(ggplot(data = data2, mapping = aes(x = alpha, y = beta, fill = pcorrs)) + geom_raster(interpolate = TRUE) 
+     + stat_contour(aes(z = pcorrs), color = "black", alpha = 0.5, breaks = seq(0.5,0.9,by = 0.01)) 
+    + scale_x_continuous(expand = c(0,0)) + scale_y_continuous(expand = c(0,0)) 
+    + scale_fill_gradient(low = "blue", high = "yellow", limits = c(0.49,max(data2$pcorrs)), breaks = c(0.5,0.6,0.7,0.8,0.9))
+    + xlab(bquote("Learning Rate"~alpha)) + ylab(bquote("Inverse Temperature" ~beta)) 
+    + labs(title = "Reversal learning", subtitle = paste0("Number of Trials: ", trials, " | Reversal after ", reverse_after," blocks"), fill = "correct \nchoices \n(%)") 
+    + theme(aspect.ratio = 0.75))
+
+```
+
+
+### Simulations for 3 x 3 plot
+
+Define simulation parameters:
+```{r}
+
+## Fixed
+
+alpha_range = c(0,1)
+alpha_steps = 60
+
+beta_range = c(0,20)
+beta_steps = 60
+
+trials = 200
+blocks = 1000
+
+## variable
+
+p = c(0.66, 0.75, 0.80)
+reverse_after = c(10,30,50)
+pars = crossing(p,reverse_after) %>% array_tree(.,1)
+
+data.base = crossing(alpha = seq(alpha_range[1],alpha_range[2], length.out = alpha_steps+1), beta = seq(beta_range[1],beta_range[2], length.out = beta_steps+1), )
+
+simfun = function(simpars) {
+      p = simpars[1]; reverse_after = simpars[2];
+      data.base$p = p; data.base$reverse_after = reverse_after;
+      results = data.base %>% array_tree(.,1) %>% future_map_dbl(., ~ rl.player.reversal(c(.x[1], .x[2]), p = p, trials = trials, 
+                                                                                         reverse_after = reverse_after, blocks = blocks)$goodm)
+      data.base$pcorr = results
+      
+      sigma = 2
+
+      data.base$pcorrs = matrix(results,beta_steps+1,alpha_steps+1) %>% array_tree(.,1) %>%
+              purrr::map(.,~gaussfilt.ll(.x,sigma)) %>% do.call(rbind,.) %>% array_tree(.,2) %>% 
+              purrr::map(.,~gaussfilt.ll(.x,sigma)) %>% do.call(cbind,.) %>% c(.)
+      
+      saveRDS(data.base,file = paste0("sim-results/sim_reversal_after",reverse_after,"_prob",p*100,".rds"))
+      return(data.base)
+      
+}
+
+RESULTS = purrr::map(pars, ~ simfun(.x))
+
+```
+
+
+
