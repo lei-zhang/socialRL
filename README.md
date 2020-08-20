@@ -23,7 +23,7 @@ root
 to reproduce all analyses and figures in the manuscript. 
 
 **Note 1**: to properly run all scripts, you may need to set the root of this repository as your work directory. <br />
-**Note 2**: to reproduce the Matlab figures, you may need the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function. 
+**Note 2**: to reproduce the Matlab figures, you may need the [NaN Suite](https://www.mathworks.com/matlabcentral/fileexchange/6837-nan-suite), the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox, and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function. 
 
 ## RL parameter simulations
 * Figure 1A: [rl_learning_curve.m](code/rl_learning_curve.m) --> calls [simuRL_one_person.m](code/simuRL_one_person.m)
@@ -32,9 +32,11 @@ to reproduce all analyses and figures in the manuscript.
 * Figure 1D: [rl_simulations.Rmd](code/rl_simulations.Rmd) --> full simulation [rl-simulations-generate-data.Rmd](code/rl-simulations-generate-data.Rmd)
 
 ## fMRI time series of the prediction error
-* Figure 2C: [pe_time_series_plot.m](code/pe_time_series_plot.m)
+* Figure 2C: [pe_time_series_plot.m](code/pe_time_series_plot.m)\*
 * core function: [ts_corr_basic.m](code/ts_corr_basic.m) --> relies on [normalise.m](code/normalise.m)
 * permutation test: [ts_perm_test.m](code/ts_perm_test.m)
+
+\* See our [empirical paper (Zhang & Gläscher, 2020)](https://advances.sciencemag.org/content/6/34/eabb4159) for the experiments and other findings.
 
 ## posterior predictive check
 * Figure 3A-C: [plot_ppc.m](code/plot_ppc.m)
@@ -43,7 +45,7 @@ to reproduce all analyses and figures in the manuscript.
 
 ___
 
-For bug reports, please contact Lei Zhang ([lei.zhang@univie.ac.at](mailto:lei.zhang@univie.ac.at)).
+For bug reports, please contact Lei Zhang ([lei.zhang@univie.ac.at](mailto:lei.zhang@univie.ac.at), or [@lei_zhang_lz](https://twitter.com/lei_zhang_lz)).
 
 Thanks to [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and [shields.io](https://shields.io/).
 
