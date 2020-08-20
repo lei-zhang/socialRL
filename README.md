@@ -20,7 +20,7 @@ root
   ├─ data       # behavioral & fMRI data
 ```
 
-to reproduce all analyses and figures in the manuscript. 
+to reproduce all analyses and figures in the paper. 
 
 **Note 1**: to properly run all scripts, you may need to set the root of this repository as your work directory. <br />
 **Note 2**: to reproduce the Matlab figures, you may need the [NaN Suite](https://www.mathworks.com/matlabcentral/fileexchange/6837-nan-suite), the [color brewer](https://www.mathworks.com/matlabcentral/fileexchange/34087-cbrewer-colorbrewer-schemes-for-matlab) toolbox, and the [offsetAxes](https://github.com/anne-urai/Tools/blob/master/plotting/offsetAxes.m) function. 
